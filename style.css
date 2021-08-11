@@ -1,0 +1,23 @@
+*{
+    /* margin: 0; */
+    /* padding: 0; */
+    /* border: 1px solid red; */
+}
+
+body{
+    width: 70%;
+    margin: 1rem auto;
+}
+
+
+
+
+
+
+
+
+
+td{
+    margin: 1rem;
+    padding: 1rem;
+}
