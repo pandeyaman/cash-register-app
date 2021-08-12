@@ -6,24 +6,13 @@ const btnCount = document.querySelector(".btn-count");
 
 
 const countNotes = () =>{
+    let arrFinal;
     if(billAmount.value > cashReceived.value)
         alert("Cash not sufficient");
     else{
-        // let arr = [0,0,0,0,0,0,0,0,0];
         let balance = cashReceived.value - billAmount.value;
-        // if(balance/2000 > 0){
-        //     arr[0] = Math.floor(balance/2000);
-        //     balance = balance - arr[0] * 000;
-        // }
-        // if(balance/500 > 0){
-        //     arr[1] = Math.floor(balance/500);
-        //     balance = balance - arr[1] * 500;
-        // }
-        // console.log(balance);
-        // console.log(arr);
-
         let arrInitial = [2000,500,100,50,20,10,5,2,1];
-        let arrFinal = arrInitial.map((note)=>{
+        arrFinal = arrInitial.map((note)=>{
             if(balance === 0){
                 return 0;
             }
@@ -34,10 +23,15 @@ const countNotes = () =>{
             }
         })
 
-        console.log(arrFinal);
-        console.log(balance);
-
+        arrFinal.forEach((number,index)=>{
+            let noteString = ".td-note-"+index;
+            let noteCountText = document.querySelector(noteString);
+            noteCountText.textContent = number;
+            console.log(noteCountText)
+        });
         }
+
+       
 }
 
 
