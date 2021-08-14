@@ -5,19 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <title>Cash Counter</title>
 </head>
 <body>
+    <div class="container">
     <h1>Cash Counter</h1>
     <h3>Get the amount to be returned after the payment, in terms of the denomination</h3>
-    <h4>Bill Amount</h4>
-    <input type="number" class="input-bill-amount">
-    <h4>Cash Received</h4>
-    <input type="number" class="input-payment-amount">
     <br>
+    <h4>Bill Amount :</h4>
+    <input type="number" class="input-bill-amount" required min="1">
+    <br><br>
+    <button class="btn-next">Next</button>
+    <div class="div-payment" hidden>
+        <h4>Cash Received :</h4>
+        <input type="number" class="input-payment-amount">
+        <button class="btn-count">Count</button>
+    </div>
     <br>
-    <button class="btn-count">Count</button>
-    <h4>Return Change</h4>
+    <div class="div-change" hidden>
+        <div class="div-table" hidden>
+            <h4>Return Change :</h4>
     <table>
         <tr>
             <th>Denomination</th>
@@ -44,8 +54,13 @@
             <td class="td-note-8">0</td>
         </tr>
     </table>
+        </div>
+        
+    <span class="span-remark" hidden></span>
+    <img src="/img/dishes.gif" alt="" hidden class="img-dishes">
+    </div>
 
-
+    </div>
     <script src="/script.js"></script>
 </body>
 </html>
