@@ -26,7 +26,14 @@ const nextCashDiv = ()=>{
 
 const countNotes = () =>{
     let arrFinal;
-    if(Number(billAmount.value) > Number(cashReceived.value)){
+    if(billAmount.value < 0 || cashReceived.value < 0){
+        remarks.style.display = "block";
+        tableDiv.style.display = "none";
+        changeBlock.style.display = "block";
+        imgDishes.style.display = "none";
+        remarks.textContent = "ENTER A VALID AMOUNT";
+    }
+   else if(Number(billAmount.value) > Number(cashReceived.value)){
         // console.log(billAmount.value +""+ cashReceived.value);
         // console.log(Number(billAmount.value) > Number(cashReceived.value));
         // alert("Cash not sufficient");
